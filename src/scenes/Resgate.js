@@ -67,7 +67,7 @@ export default class Resgate extends Component {
                 )} />
             </List>
         ) : (
-            <View>
+            <View style={styles.container}>
                 <List>
                     <FlatList data={items} renderItem={({ item }) => (
                         <ListItem
@@ -98,8 +98,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
     },
     button: {
         backgroundColor: '#d88100',
