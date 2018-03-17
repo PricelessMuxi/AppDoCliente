@@ -7,14 +7,13 @@
 import React from 'react';
 
 import { TabNavigator } from 'react-navigation';
-import Home from './scenes/Home'
-import Points from './scenes/Points'
+import Resgate from './scenes/Resgate'
+// import Points from './scenes/Points'
 import Badges from './scenes/Badges'
 
 const ScreenNavigator = TabNavigator(
     {
-        Home: {screen: Home},
-        Points: {screen: Points},
+        Resgate: {screen: Resgate},
         Badges: {screen: Badges},
     },
     {

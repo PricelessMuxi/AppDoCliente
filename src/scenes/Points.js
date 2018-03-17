@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 
 
 export default class Points extends Component {
@@ -30,18 +31,15 @@ export default class Points extends Component {
             },
         ];
         return (
-            <View style={styles.container}>
-                <Text>I'm Points!</Text>
-                {items.map((o) => {
-                    return (
-                        <View>
-                            <Text>{o.date}</Text>
-                            <Text>{o.amount}</Text>
-                            <Text>{o.points}</Text>
-                        </View>
-                    );
-                }, this)}
-            </View>
+            <List>
+                <FlatList data={items} renderItem={({ item }) => (
+                    <ListItem
+                        title={item.date}
+                        subtitle={`${item.points} pontos adquiridos em compras`}
+                        keyExtractor={item => item.date}
+                    />
+                )} />
+            </List>
         );
     }
 }
